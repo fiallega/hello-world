@@ -1,1 +1,1 @@
-# hello-world is a good thing
+# hello-world is a good things
