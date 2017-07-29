@@ -1,7 +1,8 @@
 pipeline {
   agent {
-    node {
-      label 'This is a label'
+    docker {
+      image 'maven:3.3.9-jdk-8'
+      args '-v /Users/fiallega/.m2'
     }
     
   }
