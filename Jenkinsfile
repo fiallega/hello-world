@@ -12,7 +12,13 @@ pipeline {
         echo 'Hello'
       }
     }
-    stage('goodbye') {
+    stage('build') {
+      steps {
+        sh '''echo PATH = ${PATH}
+echo M2_HOME = ${M2_HOME}'''
+      }
+    }
+    stage('bye') {
       steps {
         echo 'Good Bye'
       }
