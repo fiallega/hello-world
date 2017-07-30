@@ -24,9 +24,14 @@ mvn clean'''
         sh 'mvn -Dmaven.test.failure.test.ignore=true install'
       }
     }
+    stage('archive') {
+      steps {
+        archiveArtifacts 'target/*.jar'
+      }
+    }
     stage('bye') {
       steps {
-        echo 'good bye'
+        echo 'Good Bye'
       }
     }
   }
