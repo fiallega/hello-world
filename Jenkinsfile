@@ -12,16 +12,21 @@ pipeline {
         echo 'Hello'
       }
     }
-    stage('build') {
+    stage('initialize') {
       steps {
         sh '''echo PATH = ${PATH}
 echo M2_HOME = ${M2_HOME}
 mvn clean'''
       }
     }
+    stage('build') {
+      steps {
+        sh 'mvn -Dmaven.test.failure.test.ignore=true install'
+      }
+    }
     stage('bye') {
       steps {
-        echo 'Good Bye'
+        echo 'good bye'
       }
     }
   }
