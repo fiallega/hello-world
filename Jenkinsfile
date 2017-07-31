@@ -26,7 +26,7 @@ mvn clean'''
     }
     stage('archive') {
       steps {
-        archiveArtifacts 'target/*.jar'
+        archiveArtifacts 'target/*.jadr'
       }
     }
     stage('bye') {
